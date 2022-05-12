@@ -1,0 +1,73 @@
+.container-fluid {
+    width: 100%;
+    padding-top: 50px;
+    height: 550px; 
+    background-color: #7b4397; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #7b4397 , #dc2430);
+    
+}
+
+table {
+    border: 1px solid;
+    margin: auto;
+    width: 80% !important;
+    height: 70% !important;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgba(80, 59, 59, 0.5);
+}
+
+.seat-select {
+    cursor: pointer;
+    background: white;
+    /* background: rgb(244, 241, 241); */
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    color: grey;
+}
+
+.seat-select:hover{
+    background: gray;
+}
+
+.seat-selected {
+    
+    cursor: pointer;
+    background: rgb(74, 158, 74);
+    color: white;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.seat-disabled {
+    /* cursor: not-allowed; */
+    pointer-events: none;
+    background: brown;
+    color: white;
+    border-radius: 3px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+#submitButton {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 21px;
+    background-color: brown;
+    
+}
+/* container-fluid button:hover{
+    background-color: #dd0b40;
+    
+  } */
+
+td{
+    display: inline-flex;
+
+}

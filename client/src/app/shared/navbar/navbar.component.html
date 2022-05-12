@@ -1,0 +1,24 @@
+<!-- <p>navbar works!</p> -->
+<nav>
+    <div class="logo">
+        <a class="logoname" *ngIf="!auth.getisLoggedin()"   href="">MovieAdda</a>
+        <a *ngIf="auth.getisLoggedin()" routerLink="home"  class="logoname">MovieAdda</a>
+    </div>
+    <ul class="nav-links">
+        <!-- <li><a routerLink="/" routerLinkActive>Home</a></li> -->
+        <li *ngIf="!auth.getisLoggedin()"><a routerLink="users/register">Signup</a></li>
+        <li *ngIf="!auth.getisLoggedin()"><a routerLink="users/login" routerLinkActive>Login</a></li>
+        <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="addlocation">Location</a></li>
+        <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="addmovie">Movie</a></li>
+        <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="addcinema">Theatre</a></li>
+        <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="addshow">Show</a></li>
+        <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="bookings">Bookings</a></li>
+        <li *ngIf="auth.getisLoggedin() && !auth.isAdmin()"><a routerLink="movie/book">Book Tickets</a></li>
+        <li *ngIf="auth.getisLoggedin() && !auth.isAdmin()"><a routerLink="bookings">My Bookings</a></li>
+        <li *ngIf="auth.getisLoggedin()"><a style="cursor: pointer;" (click)="logoutUser()">Log Out</a></li>
+        
+       
+    </ul>
+</nav>
+<router-outlet></router-outlet>
+<!-- routerLink="/" routerLinkActive -->

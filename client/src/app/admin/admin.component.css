@@ -1,0 +1,45 @@
+.banner{
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    /* background-color: #002e6e; */
+    background-color: #742525e6;
+    z-index: -1;
+}
+
+.welcome{
+    z-index: 10;
+    color: white;
+    margin-top: 20px;
+}
+
+.over-banner{
+    width: 100%;
+}
+
+.content{
+    padding: 8px;
+    width: 95%;
+    margin-top: 50px;
+    z-index: 10;
+    background-color: white;
+}
+
+.about-us-heading{
+    position: relative;
+    text-align: center;
+    top: -25px;
+}
+
+.about-us-heading span{
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgb(163 95 72);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icon fa-icon{
+    color: #742525e6;
+}

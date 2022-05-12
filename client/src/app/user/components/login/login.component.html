@@ -1,0 +1,19 @@
+<div class="wrapper">
+
+    
+    
+    <div class="block">
+        <!-- <h1>Movie Booking Application</h1> -->
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+           <h2>Login</h2>
+           <input type="text" placeholder="Enter email id" class="inp" formControlName="email"/>
+           <input type="password" placeholder="Enter password" class="inp" formControlName="password"/>
+           <div class="btns">
+           <button [disabled]="!loginForm.valid">LOGIN</button>
+           <button (click)="goToRegister()">SIGN UP</button>
+           </div>
+           <a href="" class="forgot">Forgot Password</a>
+       </form>
+
+    </div>
+</div>

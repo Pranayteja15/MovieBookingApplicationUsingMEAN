@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <div class="block">
+<form [formGroup]="cinemaForm" (ngSubmit)="addcinema()">
+    <h2>Add Theatre in Particular Location</h2>
+    <input type="text" placeholder="Enter theatre name" class="inp" formControlName="name"/>
+    <input type="number" placeholder="Enter ticketPrice " class="inp" formControlName="ticketPrice"/>
+
+
+    <label for="location">Location:</label>  
+            <select id="location" formControlName="city" class="inp">  
+                <option disabled>Select Location</option>  
+                <option>Choose Location</option>  
+                <option *ngFor="let loc of locationList">{{loc}}</option>  
+            </select>
+
+    <!-- <input type="text" placeholder="Enter city id" class="inp" formControlName="city"/> -->
+    <div class="btns">
+    <!-- <button (click)="goToLogin()">Add Location</button> -->
+    <button [disabled]="!cinemaForm.valid">Add Movie</button>
+    </div>
+</form>
+</div>
+<!-- <button (click)="getAllCinemas()">Get all Cinemas</button> -->
+<!-- <ul *ngFor="let list of cinemaList">
+    <li>{{ list.id }} : {{ list.name }} : {{list.ticketPrice}} : {{list.city}}</li>
+</ul> -->
+</div>

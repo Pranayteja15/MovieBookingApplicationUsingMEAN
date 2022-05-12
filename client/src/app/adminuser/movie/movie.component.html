@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <div class="block">
+<form [formGroup]="movieForm" (ngSubmit)="addmovie()">
+    <h2>Add Movies</h2>
+    <input type="text" placeholder="Enter movie name" class="inp" formControlName="title"/>
+    <input type="text" placeholder="Enter movie language" class="inp" formControlName="language"/>
+    <input type="text" placeholder="Enter movie genre" class="inp" formControlName="genre"/>
+    <div class="btns">
+    <!-- <button (click)="goToLogin()">Add Location</button> -->
+    <button [disabled]="!movieForm.valid">Add Movie</button>
+    </div>
+</form>
+    </div>
+<!-- <button (click)="getAllMovies()">Get all movies</button> -->
+<!-- <ul *ngFor="let list of movieList">
+    <li>{{list._id}} : {{ list.title }} </li>
+</ul> -->
+</div>

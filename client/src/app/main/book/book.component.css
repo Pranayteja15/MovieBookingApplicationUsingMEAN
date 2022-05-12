@@ -1,0 +1,42 @@
+.block{
+    width: 400px;
+    padding: 5px;
+    border: 1px solid gray;
+    background: slateblue;
+    height: fit-content;
+  }
+  h1{
+    margin: 0px;
+    padding: 12px;
+  }
+  form{
+  width: 90%;
+  /* margin: 5px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  }
+  label{
+      visibility: hidden;
+  }
+  h2{
+  color: black;
+  font-weight: 600;
+  font-family: sans-serif;
+  /* flex-direction: column; */
+  }
+      .inp{
+        padding: 10px 10px;
+        margin: 6px;
+        width: 80%;
+       
+      }
+      .btns{
+        padding: 10px;
+          /* display: flex; */
+          width: 60%;
+      }
+      .forgot{
+        padding: 10px;
+      }

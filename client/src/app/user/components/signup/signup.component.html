@@ -1,0 +1,17 @@
+<div class="wrapper">    
+    <div class="block">
+        <!-- <h1>Movie Booking Application</h1> -->
+       <form [formGroup]="signupForm" (ngSubmit)="signup()">
+           <h2>Register</h2>
+           <input type="text" placeholder="Enter first name" class="inp" formControlName="fname"/>
+           <input type="text" placeholder="Enter last name" class="inp" formControlName="lname"/>
+           <input type="text" placeholder="Enter email id" class="inp" formControlName="email"/>
+           <input type="password" placeholder="Enter password" class="inp" formControlName="password"/>
+           <div class="btns">
+           <button (click)="goToLogin()">LOGIN</button>
+           <button [disabled]="!signupForm.valid">SIGN UP</button>
+           </div>
+           <!-- <a href="goToRegister()" class="forgot">Forgot Password</a> -->
+       </form>
+    </div>
+</div>

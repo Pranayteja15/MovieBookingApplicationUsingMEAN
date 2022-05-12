@@ -1,0 +1,46 @@
+
+  .wrapper{
+    background-image:url("moviehome.jpg"); 
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   min-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    flex-direction: column;
+    padding: 30px;
+  }
+  .block{
+    width: 320px;
+    padding: 40px;
+    
+    background-color: black;
+    height: fit-content;
+    border-radius: 15px;
+  }
+  h2{
+    font-family: 'Oleo Script Swash Caps', cursive;
+    color: #fa255e;
+    margin: 0px;
+    padding: 20px;
+  }
+  p{
+      color: white;
+      align-items: center;
+      padding-bottom: 10px;
+  }
+  h1{
+    color: white;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  padding-bottom: 300px;
+  color: rgb(209, 141, 141);
+  font-family:Brush Script MT, Brush Script Std, cursive ;
+  
+
+}

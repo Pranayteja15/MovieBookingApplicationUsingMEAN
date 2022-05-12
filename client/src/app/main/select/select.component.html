@@ -1,0 +1,24 @@
+<p>select works!</p>
+<div class="container">
+    <h1>{{city}}: {{title}}</h1>
+  
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+      <div class="form-group">
+        <label for="show">Select a Show:</label>
+        <div *ngFor="let item of result">
+          <input id="show" type="radio" value="{{item.id}}"
+            formControlName="show">{{item.showtime}} : {{item.cinema}}
+          <!-- <label for="sport">{{item.cinema}}</label> -->
+        </div>
+  
+        <!-- <div *ngIf="f.sport.touched && f.sport.invalid" class="alert alert-danger">
+          <div *ngIf="f.sport.errors?.required">Name is required.</div>
+        </div> -->
+      </div>
+  
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+  
+      <!-- <h5>Selected Value: {{form.value | json}}</h5> -->
+    </form>
+  </div>
