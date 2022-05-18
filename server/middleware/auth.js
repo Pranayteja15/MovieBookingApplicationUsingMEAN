@@ -6,7 +6,7 @@ const verifyToken = (req, res, next) => {
     return res.status(401).json('Unauthorized Request')
   }
   const token =  req.headers.authorization.split(' ')[1]
-  // req.headers["x-access-token"] || ;
+  
 
   if (!token) {
     return res.status(401).json("A token is required for authentication");
@@ -18,9 +18,7 @@ const verifyToken = (req, res, next) => {
       return res.status(401).json("A token is required for authentication");
     }
     console.log(decoded)
-    // if (decoded.exp < Date.now().valueOf() / 1000) { 
-    //   return res.status(401).json({ error: "JWT token has expired, please login to obtain a new one" });
-    //  } 
+    
   } catch (err) {
     return res.status(401).json("Invalid Token");
   }

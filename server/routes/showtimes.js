@@ -7,10 +7,10 @@ const auth = require("../middleware/auth");
 const Movie = require("../model/movie");
 const Cinema = require("../model/cinema");
 const Location = require("../model/location");
-const passport = require('passport');
+// const passport = require('passport');
 const cinema = require("../model/cinema");
 const Reservation = require("../model/reservation");
-require('../middleware/passport')
+// require('../middleware/passport')
 
 // Creating a movie 
 router.post('/add', auth.enhance,async (req, res) => {

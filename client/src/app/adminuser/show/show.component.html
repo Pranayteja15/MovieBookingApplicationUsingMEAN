@@ -2,14 +2,14 @@
     <div class="block">
 <form [formGroup]="showForm" (ngSubmit)="addshow()">
     <h2>Show</h2>
-    <!-- <input type="text" placeholder="Enter show name" class="inp" formControlName="startAt"/> -->
-
-            <label for="startAt">StartAt:</label>  
-            <select id="startAt" formControlName="startAt" class="inp">  
-                <option disabled>Select Start Time</option>  
-                <option>Choose Start Time</option>  
-                <option *ngFor="let loc of showNameList">{{loc}}</option>  
-            </select>
+    
+    <label for="location">Location:</label>
+    <select id="location" formControlName="cityId" class="inp">  
+        <option disabled>Select Location</option>  
+        <option>Choose Location</option>  
+        <option *ngFor="let loc of locationList">{{loc}}</option>  
+    </select>
+            
 
             <label for="movie">Movie:</label>  
             <select id="movie" formControlName="movieId" class="inp">  
@@ -22,25 +22,32 @@
                 <option disabled>Select Cinema Name</option>  
                 <option>Choose Theatre Name</option>  
                 <option *ngFor="let loc of cinemaList">{{loc}}</option>  
-            </select>        
-            <label for="city">City:</label>  
-            <select id="city" formControlName="cityId" class="inp">  
-                <option disabled>Select City Name</option>  
-                <option>Choose city Name</option>  
-                <option *ngFor="let loc of cityList">{{loc}}</option>  
-            </select>  
+            </select>       
+            <label for="startAt">StartAt:</label>  
+            <select id="startAt" formControlName="startAt" class="inp">  
+                <option disabled>Select Start Time</option>  
+                <option>Choose Start Time</option>  
+                <option *ngFor="let loc of showNameList">{{loc}}</option>  
+            </select> 
+            <input type="text" placeholder="Enter seatsAvailable" class="inp" formControlName="seatsAvailable"/>
+            <input type="text" placeholder="Enter seat Dimensions" class="inp" formControlName="seats"/>
+            
+             
 
     <!-- <input type="text" placeholder="Enter movie id" class="inp" formControlName="movieId"/> -->
     <!-- <input type="text" placeholder="Enter cinema id" class="inp" formControlName="cinemaId"/> -->
-    <input type="text" placeholder="Enter city id" class="inp" formControlName="cityId"/>
+    <!-- <input type="text" placeholder="Enter city id" class="inp" formControlName="cityId"/> -->
     <div class="btns">
     <!-- <button (click)="goToLogin()">Add Location</button> -->
     <button [disabled]="!showForm.valid">Add Show</button>
     </div>
 </form>
-    </div>
-<!-- <button (click)="getAllShows()">Get all Shows</button> -->
-<!-- <ul *ngFor="let list of showList">
-    <li> {{ list.startAt }} : {{list.title}} : {{list.name}} : {{list.ticketPrice}} : {{list.city}}</li>
-</ul> -->
+<div class="main">
+    <h2>Shows Added</h2>
+<ul *ngFor="let list of showList">
+    <li> {{list.city}} : {{list.title}} : {{list.name}} : {{list.ticketPrice}} :{{ list.startAt }} </li>
+</ul>
 </div>
+    </div>
+</div>
+<!-- <button (click)="getAllShows()">Get all Shows</button> -->

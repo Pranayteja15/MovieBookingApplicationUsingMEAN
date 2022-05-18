@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './user/components/login/login.component';
 import { SignupComponent } from './user/components/signup/signup.component';
-import { DashboardComponent } from './main/dashboard/dashboard.component';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BookComponent } from './main/book/book.component';
 import { AdminComponent } from './admin/admin.component';
@@ -41,12 +41,10 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { TokenInterceptorService } from './token-interceptor.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    // LoginComponent,
-    // SignupComponent,
-    DashboardComponent,
     BookComponent,
     AdminComponent,
     LocationComponent,
@@ -56,7 +54,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
     SelectComponent,
     SeatsComponent,
     HomeComponent,
-    // NavbarComponent
+    
   ],
   imports: [
     BrowserModule,

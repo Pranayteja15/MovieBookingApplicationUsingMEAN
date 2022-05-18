@@ -14,9 +14,7 @@ export class LocationComponent implements OnInit {
   locationForm:any = FormGroup;
   locationList:any=[]
 
-  // getAllLocations(){
-    
-  // }
+ 
 
   addlocation() {
     console.log(this.locationForm.value.city)
@@ -27,8 +25,7 @@ export class LocationComponent implements OnInit {
     .subscribe({
       next: (res) => {
         console.log(res)
-        // alert("logged in")
-        // this.router.navigateByUrl('book')
+      
       },
       error: (err) => { console.log(err) 
       alert("invalid details")} 

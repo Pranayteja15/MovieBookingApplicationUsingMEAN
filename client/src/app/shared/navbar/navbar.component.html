@@ -12,9 +12,9 @@
         <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="addmovie">Movie</a></li>
         <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="addcinema">Theatre</a></li>
         <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="addshow">Show</a></li>
-        <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="bookings">Bookings</a></li>
+        <!-- <li *ngIf="auth.getisLoggedin() && auth.isAdmin()"><a routerLink="bookings">Bookings</a></li> -->
         <li *ngIf="auth.getisLoggedin() && !auth.isAdmin()"><a routerLink="movie/book">Book Tickets</a></li>
-        <li *ngIf="auth.getisLoggedin() && !auth.isAdmin()"><a routerLink="bookings">My Bookings</a></li>
+        <!-- <li *ngIf="auth.getisLoggedin() && !auth.isAdmin()"><a routerLink="bookings">My Bookings</a></li> -->
         <li *ngIf="auth.getisLoggedin()"><a style="cursor: pointer;" (click)="logoutUser()">Log Out</a></li>
         
        

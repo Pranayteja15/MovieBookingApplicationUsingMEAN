@@ -15,9 +15,6 @@ export class MovieComponent implements OnInit {
   movieForm:any = FormGroup;
   movieList:any=[]
 
-  // getAllMovies(){
-
-  // }
 
   addmovie() {
     console.log(this.movieForm.value)
@@ -30,8 +27,7 @@ export class MovieComponent implements OnInit {
     .subscribe({
       next: (res) => {
         console.log(res)
-        // alert("logged in")
-        // this.router.navigateByUrl('book')
+        
       },
       error: (err) => { console.log(err) 
       alert("invalid details")} 

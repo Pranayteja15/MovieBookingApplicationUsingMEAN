@@ -30,16 +30,7 @@ export class SelectComponent implements OnInit {
     let id:string=this.form.value.show
     this.auth.set_showId(this.form.value.show)
     this.router.navigateByUrl('/seats');
-    // this.auth.getShowbyId(id)
-    // .subscribe({
-    //       next: (res) => {
-    //         console.log('success',res)
-    //         // alert("detail")
-    //         // this.router.navigate(['book'])
-    //       },
-    //       error: (err) => { console.log(err) 
-    //         alert("invalid details")}
-    //     })
+
     console.log(this.form.value);
   }
 
@@ -47,8 +38,7 @@ export class SelectComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       show: ['',Validators.required],
-      // password:['',Validators.required],
-      // email:['',Validators.compose([Validators.required,Validators.email])]
+    
     })
 
         this.title=this.auth.get_title()
@@ -61,9 +51,7 @@ export class SelectComponent implements OnInit {
               this.showIdList.push(item.id)
             }
             this.result=res
-            // console.log('success',this.result,this.showIdList)
-            // alert("detail")
-            // this.router.navigate(['book'])
+            
           },
           error: (err) => { console.log(err) 
             alert("invalid details")}

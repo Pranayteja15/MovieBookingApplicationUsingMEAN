@@ -16,37 +16,36 @@ export class ShowComponent implements OnInit {
   showForm:any = FormGroup;
   showList:any=[]
   showNameList:any=['11:00 AM','2:30 PM','6:45 PM','10:00 PM']
-  // locationList:any=[]
-  // locationId:any=[]
   movieList:any=[]
   movieIdList:any=[]
   cinemaList:any=[]
   cinemaIdList:any=[]
   cityList:any=[]
   cityIdList:any=[]
+  locationList:any=[]
+  locationId:any=[]
 
-
-  // getAllShows(){
-
-  // }
 
   addshow() {
     console.log(this.showForm.value)
     let cinemaid= this.cinemaList.indexOf(this.showForm.value.cinemaId)
     let movieid= this.movieList.indexOf(this.showForm.value.movieId)
-    // let cityid= this.cityList.indexOf(this.showForm.value.cityId)
+    
+    let id= this.locationList.indexOf(this.showForm.value.cityId)
     const obj ={
       startAt: this.showForm.value.startAt,
       movieId:this.movieIdList[movieid],
       cinemaId: this.cinemaIdList[cinemaid],
-      // cityId: this.cityId[cityid],
+      cityId: this.locationId[id],
+      seats :this.showForm.value.seats,
+      seatsAvailable :this.showForm.value.seatsAvailable,
+ 
     };
     return this.http.post("http://localhost:9000/showtime/add",obj)
     .subscribe({
       next: (res) => {
         console.log(res)
-        // alert("logged in")
-        // this.router.navigateByUrl('book')
+      
       },
       error: (err) => { console.log(err) 
       alert("invalid details")} 
@@ -57,7 +56,9 @@ export class ShowComponent implements OnInit {
       startAt: new FormControl('', Validators.required),
       movieId: new FormControl('', Validators.required),
       cinemaId: new FormControl('', Validators.required),
-      cityId: new FormControl('', Validators.required)
+      cityId: new FormControl('', Validators.required),
+      seatsAvailable: new FormControl('', Validators.required),
+      seats: new FormControl('', Validators.required),
     })
 
     this.srv.getCinemas()
@@ -67,7 +68,7 @@ export class ShowComponent implements OnInit {
             this.cinemaList.push(item.name)
             this.cinemaIdList.push(item.id)
           }
-          // console.log('success',res,this.cinemaList,this.cinemaId)
+          console.log('success',res,this.cinemaList,this.cinemaIdList)
         },
         error: (err) => { console.log(err) 
           alert("invalid movie details")}
@@ -80,7 +81,7 @@ export class ShowComponent implements OnInit {
           this.movieList.push(item.title)
           this.movieIdList.push(item._id)
         }
-        // console.log('success',this.movieIdList,this.movieList)
+        console.log('success',this.movieIdList,this.movieList)
       },
       error: (err) => { console.log(err) 
         alert("invalid movie details")}
@@ -91,11 +92,23 @@ export class ShowComponent implements OnInit {
         for(let item of res){
           this.showList.push(item)
         }
-        // console.log('success',res,this.showList)
+        console.log('success',res,this.showList)
       },
       error: (err) => { console.log(err) 
         alert("invalid movie details")}
     })
+    this.srv.getLocations()
+      .subscribe({
+        next: (res) => {
+          for(let item of res){
+            this.locationList.push(item.city)
+            this.locationId.push(item._id)
+          }
+          console.log('success',res,this.locationList,this.locationId)
+        },
+        error: (err) => { console.log(err) 
+          alert("invalid movie details")}
+      })
   }
 
 }

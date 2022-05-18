@@ -16,11 +16,9 @@ export class RoleGuard implements CanActivate {
       if((localStorage.getItem('token') && this.auth.isAdmin())){
         return true;
     }else if(localStorage.getItem('token')){
-      // localStorage.removeItem('token')
-      // localStorage.removeItem('id'),
-      // localStorage.removeItem('role')
+     
       alert('You are not allowed')
-      // this.router.navigate(['/users/login'])
+     
       this.router.navigate(['/home'])
       return false;
     } else{

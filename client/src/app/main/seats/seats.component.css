@@ -2,7 +2,7 @@
     width: 100%;
     padding-top: 50px;
     height: 550px; 
-    background-color: #7b4397; /* For browsers that do not support gradients */
+    background-color: #7b4397; 
     background-image: linear-gradient(to right, #7b4397 , #dc2430);
     
 }
@@ -20,7 +20,7 @@ table {
 .seat-select {
     cursor: pointer;
     background: white;
-    /* background: rgb(244, 241, 241); */
+    
     border-radius: 3px;
     margin: 10px;
     padding: 10px;
@@ -44,7 +44,7 @@ table {
 }
 
 .seat-disabled {
-    /* cursor: not-allowed; */
+    
     pointer-events: none;
     background: brown;
     color: white;
@@ -62,10 +62,7 @@ table {
     background-color: brown;
     
 }
-/* container-fluid button:hover{
-    background-color: #dd0b40;
-    
-  } */
+
 
 td{
     display: inline-flex;

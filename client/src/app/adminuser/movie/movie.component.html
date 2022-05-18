@@ -6,13 +6,16 @@
     <input type="text" placeholder="Enter movie language" class="inp" formControlName="language"/>
     <input type="text" placeholder="Enter movie genre" class="inp" formControlName="genre"/>
     <div class="btns">
-    <!-- <button (click)="goToLogin()">Add Location</button> -->
+    
     <button [disabled]="!movieForm.valid">Add Movie</button>
-    </div>
-</form>
-    </div>
-<!-- <button (click)="getAllMovies()">Get all movies</button> -->
-<!-- <ul *ngFor="let list of movieList">
-    <li>{{list._id}} : {{ list.title }} </li>
-</ul> -->
 </div>
+</form>
+<div class="main">
+    <h2>Movies Added</h2>
+<ul *ngFor="let list of movieList">
+    <li> {{ list.title }} </li>
+</ul>
+</div>
+</div>
+    </div>
+

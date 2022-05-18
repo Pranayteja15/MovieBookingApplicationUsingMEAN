@@ -17,12 +17,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors(coreOptions))
 
-const passport = require('passport')
-app.use(passport.initialize())
-require('./middleware/passport')
-app.get('/book',passport.authenticate('jwt',{session:false}),(req,res)=>{
-    res.send('hello world')
-})
 
 //Routes
 const userRouter = require('./routes/users')

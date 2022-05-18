@@ -3,11 +3,11 @@ const express = require("express");
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const router = express.Router()
-const passport = require('passport')
-require('../middleware/passport')
+// const passport = require('passport')
+// require('../middleware/passport')
 const User = require("../model/user");
 const auth = require("../middleware/auth");
-
+// const tokenList = {}
 router.get("/welcome", auth.verifyToken, (req, res) => {
   res.status(200).send("Welcome 🙌 ");
 });
@@ -17,9 +17,7 @@ router.post("/register", async (req, res) => {
 
     // Our register logic starts here
     try {
-      // Get user input
-      // const role = req.body.role
-      // if (role) {return res.status(400).send("you cannot set role property");}
+     
       const { first_name, last_name, email, password } = req.body;
   
       // Validate user input
@@ -54,15 +52,14 @@ router.post("/register", async (req, res) => {
           expiresIn: "1h",
         }
       );
-      // save user token
+     
       user.token = token;
   
-      // return new user
       return res.status(201).json(user);
     } catch (err) {
       console.log(err);
     }
-    // Our register logic ends here
+  
   });
     
 // Login
@@ -82,10 +79,24 @@ router.post("/login", async(req, res) => {
             { user_id: user._id, email },'pranay',
             {expiresIn: "1h",}
           );
-          // save user token
+        //   const refreshToken = jwt.sign(
+        //     { user_id: user._id, email },
+        //     'pranay',
+        //     {
+        //       expiresIn: "1440h",
+        //     }
+        //   );
+        //   const response = {
+        //     "status": "Logged in",
+        //     "token": token,
+        //     "refreshToken": refreshToken,
+        // }
+        // tokenList[refreshToken] = response
+        //  res.status(200).json(response);
+    
+          
           user.token = token;
-          // res.send("Logged")
-          // user
+         
           res.status(200).json(user);
         }
         res.status(400).send("Invalid Credentials");
@@ -144,27 +155,13 @@ router.delete('/:id', auth.enhance,async(req,res)=>{
     if (role=='guest') {return res.status(400).send("you cannot delete the user");}
     const u1 = await user.delete()
     res.json(user.role)
-    // res.status(200).json({
-    //  data: u1,
-    //  message: 'User has been deleted'
-    // });
+  
   }
   catch(err){
       res.send('error'+err)
   }
 })
 
-
-    // router.put("/logout", auth, function (req, res) {
-    //     const authHeader = req.headers["x-access-token"];
-    //     jwt.sign(authHeader, "", { expiresIn: 0 } , (logout, err) => {
-    //     if (logout) {
-    //     res.send({msg : 'You have been Logged Out' });
-    //     } else {
-    //     res.send({msg:'Error'});
-    //     }
-    //     });
-    //     });
         
 
 module.exports = router;

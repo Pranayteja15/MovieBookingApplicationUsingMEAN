@@ -38,7 +38,7 @@ router.get('/:city', auth.verifyToken,async(req,res)=>{
 
   try{
     const location = await Location.findOne({city:req.params.city})
-    // const movie = await Movie.findOne({title:req.params.title});
+    
     
     if (location){
       const showtime = await Showtime.find({cityId:location.id})
@@ -51,12 +51,9 @@ router.get('/:city', auth.verifyToken,async(req,res)=>{
             title:movie.title,
           }
           details.push(show)
-          // console.log(shows)
+          
         }
-        // const details={
-        //   shows:shows
-        //   // location:cinema.city
-        // }
+       
         res.status(200).json(details);
       }
       else{res.json("No Shows");}

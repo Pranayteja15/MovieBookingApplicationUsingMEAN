@@ -1,9 +1,9 @@
 .wrapper{
-    /* background-image:url("moviehome.jpg"); 
+    background-image:url("movie.jpg"); 
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
-   min-height: 550px; */
+   min-height: 550px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,24 +35,28 @@
       width: 320px;
       padding: 25px;
      
-      background: black;
+      background: rgba(0, 0, 0, 0.9);
       height: fit-content;
       border-radius: 15px;
-      /* opacity: 0.25; */
-    }
-    
-.block{
+      
+  }
+  .main{
     width: 320px;
-    padding: 40px;
-    
-    background-color: black;
+    padding: 25px;
+   
+    color: white;
     height: fit-content;
     border-radius: 15px;
+    align-self: center;
+    padding-top: 20px;
+    align-items: center;
   }
+    
+
  
   form{
   width: 95%;
-  /* margin: 5px; */
+ 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +66,7 @@
     font-size:30px;
     color: #fa255e;
     padding-bottom: 10px;
-  /* color: black; */
+
   font-weight: 500;
   font-family: 'Oleo Script Swash Caps', cursive;
   }

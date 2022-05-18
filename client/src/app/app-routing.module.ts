@@ -1,4 +1,4 @@
-import { DashboardComponent } from './main/dashboard/dashboard.component';
+
 import { LoginComponent } from './user/components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,18 +16,11 @@ import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
 
 const routes: Routes = [
-  {
-    path:'',component:HomeComponent
-  },
+  {path:'',component:HomeComponent},
   {path: 'movie', loadChildren: () => import("./modules/movie/movie.module").then(module => module.MovieModule)  },
   {path: 'users', loadChildren: () => import("./user/user.module").then(module => module.UserModule) },
   {path: 'final', loadChildren: () => import("./modules/final/final.module").then(module => module.FinalModule) },
-  {
-    path:'bookings',component:DashboardComponent,canActivate:[AuthGuard]
-  },
-  // {
-  //   path: 'book',component:BookComponent
-  // },
+ 
   {
     path: 'home',component:AdminComponent,canActivate:[AuthGuard]
   },
@@ -43,9 +36,7 @@ const routes: Routes = [
   {
     path: 'addshow',component:ShowComponent,canActivate:[RoleGuard]
   },
-  // {
-  //   path: 'select',component:SelectComponent
-  // },
+
   {
     path: 'seats',component:SeatsComponent,canActivate:[AuthGuard]
   },

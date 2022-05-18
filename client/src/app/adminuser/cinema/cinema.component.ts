@@ -17,9 +17,7 @@ export class CinemaComponent implements OnInit {
   locationList:any=[]
   locationId:any=[]
 
-  // getAllCinemas(){
-    
-  // }
+  
   
   addcinema() {
     let id= this.locationList.indexOf(this.cinemaForm.value.city)
@@ -33,8 +31,7 @@ export class CinemaComponent implements OnInit {
     .subscribe({
       next: (res) => {
         console.log(res)
-        // alert("logged in")
-        // this.router.navigateByUrl('book')
+      
       },
       error: (err) => { console.log(err) 
       alert("invalid details")} 
@@ -54,7 +51,7 @@ export class CinemaComponent implements OnInit {
             this.locationList.push(item.city)
             this.locationId.push(item._id)
           }
-          // console.log('success',res,this.locationList,this.locationId)
+          
         },
         error: (err) => { console.log(err) 
           alert("invalid movie details")}

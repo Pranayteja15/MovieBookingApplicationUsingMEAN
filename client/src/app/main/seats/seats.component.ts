@@ -34,7 +34,7 @@ export class SeatsComponent implements OnInit {
 
     public checkSeatStatus(seatNum: number,row:number,col:number) {
       if (this.rows[row][col]==1) {
-      // console.log('sta',row,col)
+      
        return false
       }
       return true;
@@ -44,37 +44,18 @@ export class SeatsComponent implements OnInit {
     public isSeatReserved(seatNum: number,row:number,col:number) {
       if (this.seats[row][col]==-1) {
        
-        // let a:any=[]
-        // a.push([row,col])
-        // console.log(a,this.reservedSeatsList)
-
-        //   if (a in this.reservedSeatsList)
-        //   {
-        //     console.log(a,'a')
-        //   // console.log(item,'reservesd')
-          return true
-        // }
-          
         
-        // if (a in this.reservedSeatsList){
-        //   // console.log('r',a)
-        //   return true}
-       
-      }
-      // console.log('r false')
+          return true
+        
+       }
+      
       return false;
   
     }
   
     /** Used to togle seat selection on click */
     public toggleSeatSelect(seatNo: number,row:number,col:number) {
-      // if (seatNo) {
-      //   let toggleSeat = this.seatAvailable.filter(value => value.seatNum === seatNo);
-      //   toggleSeat[0].isSelected = !toggleSeat[0].isSelected;
-      // }
-      // console.log(row,col)
-      // console.log(this.rows,'r')
-      // console.log(this.seats,'s')
+     
       if(seatNo){
         this.rows[row][col]=0
       }
@@ -111,14 +92,7 @@ export class SeatsComponent implements OnInit {
       this.auth.set_showId(this.id)
       this.router.navigateByUrl('/final/confirm');
       
-      // this.auth.book(this.id,this.selected)
-      // .subscribe({
-      //   next:(res)=>{
-      //     console.log(res)
-      //   },
-      //   error: (err) => { console.log(err) 
-      //     alert("invalid details")}
-      // })
+   
     }
     }
 
@@ -128,16 +102,14 @@ export class SeatsComponent implements OnInit {
     this.auth.getShowbyId(this.id)
     .subscribe({
           next: (res) => {
-            // for (let item of res){
-            //   console.log(item)
-            // }
+            
             this.seats=res.seats
-            // this.rows=res.seats.length
+            
             let i:any=0
             while ( i < this.seats.length){
               let j:any=0
               while(j < this.seats[i].length){
-                // console.log(this.show[i][j])
+                
                 if(this.seats[i][j]==1){
                   this.seats[i][j]=-1
                   this.reservedSeatsList.push([i,j])
@@ -151,13 +123,7 @@ export class SeatsComponent implements OnInit {
             this.rows=res.seats
             this.seatAvailable=res.seatsAvailable
             this.reservedSeats=this.total-this.seatAvailable
-            // console.log('success',this.seats)
-            // console.log('total',this.total)
-            // console.log('available',this.seatAvailable)
-            // console.log('reserved',this.reservedSeats)
-            // console.log('reserved positions',this.reservedSeatsList)
-            // alert("detail")
-            // this.router.navigate(['book'])
+            
           },
           error: (err) => { console.log(err) 
             alert("invalid details")}

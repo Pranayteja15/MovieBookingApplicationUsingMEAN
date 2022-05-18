@@ -4,13 +4,19 @@
     <h2>Add Locations</h2>
     <input type="text" placeholder="Enter location" class="inp" formControlName="city"/>
     <div class="btns">
-    <!-- <button (click)="goToLogin()">Add Location</button> -->
+  
     <button [disabled]="!locationForm.valid">Add Location</button>
     </div>
 </form>
+<div class="main">
+    <h2>Locations Added </h2>
+    <ul *ngFor="let list of locationList">
+        
+        <li>{{ list.city }}</li>
+    </ul>
+    </div>
+    </div>
 </div>
-<!-- <button (click)="getAllLocations()">Get all locations</button> -->
-<!-- <ul *ngFor="let list of locationList">
-    <li>{{list._id}} : {{ list.city }}</li>
-</ul> -->
-</div>
+
+
+

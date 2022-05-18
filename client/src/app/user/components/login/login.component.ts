@@ -3,8 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
+// import { NotificationService } from './notification.service';
 import { CommonService } from 'src/app/common.service';
-
+import {ToastrService} from 'ngx-toastr'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +19,14 @@ export class LoginComponent implements OnInit {
   result:any
   // users:any = [];
   constructor(private formBuilder: FormBuilder, private router:Router, private auth:AuthService,private http:HttpClient) { }
-
+  // showToastr(){
+  //   this.toastr.success('loggedin','title')
+  // }
+  // showToasterSuccess() {
+  //   this.notifyService.showSuccess(
+  //     'Data shown successfully !!',
+  //   );
+  // }
 
    login() {
     console.log(this.loginForm.value)

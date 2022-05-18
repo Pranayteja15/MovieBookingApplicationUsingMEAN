@@ -46,13 +46,9 @@ const reservationSchema = new Schema({
 //     type: String,
 //     required: true,
 //   },
-//   checkin: {
-//     type: Boolean,
-//     default: false,
-//   },
+
 });
 
-// const Reservation = mongoose.model('Reservation', reservationSchema);
+
 
 module.exports = mongoose.model('reservation', reservationSchema);
-// module.exports = Reservation;
